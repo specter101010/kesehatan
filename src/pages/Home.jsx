@@ -19,8 +19,8 @@ function Hero() {
       <motion.div aria-hidden className="absolute -left-40 top-1/4 -z-10 h-[34rem] w-[34rem] rounded-full bg-gold/10 blur-3xl"
         animate={{ x: [0, 60, 0], y: [0, 30, 0] }} transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }} />
       <div className="mx-auto w-full max-w-6xl px-6 pb-24 pt-40">
-        <motion.img initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }}
-          src="/images/logo-full.png" alt="PT Escita Pharma" className="mb-10 w-72 max-w-[70vw] drop-shadow-2xl sm:w-96" />
+        {/* <motion.img initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2 }}
+          src="/images/logo-full.png" alt="PT Escita Pharma" className="mb-10 w-72 max-w-[70vw] drop-shadow-2xl sm:w-96" /> */}
         <h1 className="max-w-4xl font-display text-5xl font-semibold leading-[1.02] sm:text-7xl">
           <SplitWords text="Precision in Every Process," delay={0.5} /><br />
           <SplitWords text="Purpose in Every Product" delay={0.9} className="shine" />
@@ -38,24 +38,65 @@ function Hero() {
 function About() {
   return (
     <Section>
-      <Reveal>
-        <p className="text-sm font-semibold text-gold">Sekilas Tentang Kami</p>
-        <H2 className="mt-3 max-w-3xl text-navy">Menjaga Kemurnian, Mewariskan Kesembuhan</H2>
-        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-deep/80">
-          Selamat datang di Escita Pharma, perusahaan industri farmasi terdepan yang berdedikasi untuk menghadirkan sediaan obat berkualitas tinggi guna meningkatkan standar kesehatan masyarakat. Kami percaya bahwa setiap produk farmasi yang aman dan efektif berawal dari komitmen mutlak terhadap kemurnian, sterilitas, dan ketelitian ilmiah.
-        </p>
-      </Reveal>
+      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+        {/* KONTEN KIRI */}
+        <Reveal>
+          <p className="text-sm font-semibold text-gold">
+            Sekilas Tentang Kami
+          </p>
+
+          <H2 className="mt-3 max-w-3xl text-navy">
+            Menjaga Kemurnian, Mewariskan Kesembuhan
+          </H2>
+
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-deep/80">
+            Selamat datang di Escita Pharma, perusahaan industri farmasi
+            terdepan yang berdedikasi untuk menghadirkan sediaan obat
+            berkualitas tinggi guna meningkatkan standar kesehatan
+            masyarakat. Kami percaya bahwa setiap produk farmasi yang
+            aman dan efektif berawal dari komitmen mutlak terhadap
+            kemurnian, sterilitas, dan ketelitian ilmiah.
+          </p>
+        </Reveal>
+
+        {/* LOGO KANAN */}
+        <Reveal delay={0.2} y={20}>
+          <div className="flex items-center justify-center lg:justify-end">
+            <motion.img
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2 }}
+              src="/images/logo-full.png"
+              alt="PT Escita Pharma"
+              className="w-72 max-w-full object-contain drop-shadow-2xl sm:w-96 lg:w-full lg:max-w-md"
+            />
+          </div>
+        </Reveal>
+      </div>
+
+      {/* STATISTIK */}
       <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-10 border-t border-navy/15 pt-12 lg:grid-cols-5">
         {STATS.map((s, i) => (
           <Reveal key={s.l} delay={i * 0.08} y={18}>
-            <p className="font-display text-6xl font-semibold text-navy"><CountUp to={s.v} suffix={s.suffix} /></p>
+            <p className="font-display text-6xl font-semibold text-navy">
+              <CountUp to={s.v} suffix={s.suffix} />
+            </p>
             <p className="mt-2 text-sm text-deep/70">{s.l}</p>
           </Reveal>
         ))}
       </div>
+
+      {/* PETA PERSEBARAN */}
       <Reveal className="mt-20">
-        <Photo src="/images/peta-persebaran.png" label="Peta persebaran Indonesia (public/images/peta-persebaran.png)" className="h-72 rounded-2xl sm:h-96" />
-        <p className="mt-4 text-center text-sm italic text-deep/70">Produk PT Escita Pharma telah hadir dan didistribusikan ke 27 kota di Indonesia</p>
+        <Photo
+          src="/images/peta-persebaran.png"
+          label="Peta persebaran Indonesia (public/images/peta-persebaran.png)"
+          className="h-72 rounded-2xl sm:h-96"
+        />
+        <p className="mt-4 text-center text-sm italic text-deep/70">
+          Produk PT Escita Pharma telah hadir dan didistribusikan ke 27 kota di Indonesia
+        </p>
       </Reveal>
     </Section>
   )
