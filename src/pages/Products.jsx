@@ -43,37 +43,40 @@ function Card({ item, i }) {
       whileHover={{ y: -6 }}
       className="group overflow-hidden rounded-2xl border border-navy/10 bg-white/80 transition-shadow hover:shadow-xl"
     >
-      {/* PRODUCT IMAGE */}
-      <div className="relative flex h-[320px] items-center justify-center overflow-hidden bg-gradient-to-br from-cream via-white to-pale/40 p-6 sm:h-[340px]">
-        {!imageError ? (
-     <img
-     src={item.image}
-     alt={item.name}
-     loading="lazy"
-     onError={() => setImageError(true)}
-     className="h-full w-full object-contain object-center transition-transform duration-700 group-hover:scale-105"
-   />
-        ) : (
-          <div className="flex flex-col items-center justify-center text-center">
-            <svg
-              viewBox="0 0 24 24"
-              className="h-14 w-14 fill-none stroke-navy/30"
-              strokeWidth="1.2"
-            >
-              <rect x="7" y="9" width="10" height="12" rx="2" />
-              <path d="M9 9V6h6v3M10 14h4" />
-            </svg>
+{/* PRODUCT IMAGE */}
+<div className="relative flex h-[320px] items-center justify-center overflow-hidden bg-white sm:h-[340px]">
 
-            <span className="mt-3 text-xs text-deep/40">
-              Foto produk menyusul
-            </span>
-          </div>
-        )}
+  {!imageError ? (
+    <img
+      src={item.image}
+      alt={item.name}
+      loading="lazy"
+      onError={() => setImageError(true)}
+      className="h-full w-full object-contain object-center transition-transform duration-700 group-hover:scale-105"
+    />
+  ) : (
+    <div className="flex flex-col items-center justify-center text-center">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-14 w-14 fill-none stroke-navy/30"
+        strokeWidth="1.2"
+      >
+        <rect x="7" y="9" width="10" height="12" rx="2" />
+        <path d="M9 9V6h6v3M10 14h4" />
+      </svg>
 
-        <span className="absolute left-3 top-3 rounded-full border border-navy/10 bg-white/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-navy">
-          {item.form || 'Farmasi'}
-        </span>
-      </div>
+      <span className="mt-3 text-xs text-deep/40">
+        Foto produk menyusul
+      </span>
+    </div>
+  )}
+
+  {/* FLOATING LABEL */}
+  <span className="absolute left-4 top-4 z-10 rounded-full border border-navy/10 bg-white/90 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-navy shadow-sm backdrop-blur-sm">
+    {item.form || 'Farmasi'}
+  </span>
+
+</div>
 
       {/* PRODUCT INFORMATION */}
       <div className="p-5">
