@@ -401,8 +401,8 @@ export const PRODUCTS = {
             'Obat Bebas',
             'Escifen.png',
             'Escifen',
-            'Produk obat bebas Escita Pharma.',
-            'Produk farmasi'
+            'Produk obat demam dan nyeri untuk anak.',
+            'suspensi'
           ),
 
           makeProduct(
@@ -601,8 +601,8 @@ export const PRODUCTS = {
             'Obat Resep Beretikal',
             'Menizol.png',
             'Menizol',
-            'Produk obat resep etikal Escita Pharma.',
-            'Produk farmasi'
+            'Metronidazol untuk sediaan infus',
+            'Infus'
           ),
 
           makeProduct(
