@@ -44,16 +44,15 @@ function Card({ item, i }) {
       className="group overflow-hidden rounded-2xl border border-navy/10 bg-white/80 transition-shadow hover:shadow-xl"
     >
       {/* PRODUCT IMAGE */}
-      <div className="relative grid aspect-[4/3] place-items-center overflow-hidden bg-gradient-to-br from-cream via-white to-pale/40 p-5">
-
+      <div className="relative flex h-[320px] items-center justify-center overflow-hidden bg-gradient-to-br from-cream via-white to-pale/40 p-6 sm:h-[340px]">
         {!imageError ? (
-          <img
-            src={item.image}
-            alt={item.name}
-            loading="lazy"
-            onError={() => setImageError(true)}
-            className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-105"
-          />
+     <img
+     src={item.image}
+     alt={item.name}
+     loading="lazy"
+     onError={() => setImageError(true)}
+     className="h-full w-full object-contain object-center transition-transform duration-700 group-hover:scale-105"
+   />
         ) : (
           <div className="flex flex-col items-center justify-center text-center">
             <svg
