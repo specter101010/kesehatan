@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+body { @apply bg-white text-deep font-sans antialiased; }
+::selection { background: #E8C870; color: #0A1A40; }
+:focus-visible { outline: 2px solid #C8920A; outline-offset: 3px; }
+
+.btn-gold { @apply inline-flex items-center gap-2 rounded-full bg-gold px-7 py-3 text-sm font-semibold text-white transition-colors duration-300 hover:bg-pale hover:text-deep; }
+.btn-line { @apply inline-flex items-center gap-2 rounded-full border border-current px-7 py-3 text-sm font-semibold transition-colors duration-300 hover:bg-pale hover:text-deep hover:border-pale; }
+.field { @apply w-full rounded-lg border border-navy/20 bg-white/70 px-4 py-3 text-sm outline-none transition focus:border-gold focus:bg-white; }
+.shine { background: linear-gradient(110deg, #C8920A 20%, #E8C870 45%, #C8920A 70%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 6s linear infinite; }
+@keyframes shine { to { background-position: -200% 0; } }
+@media (prefers-reduced-motion: reduce) { .shine { animation: none; } html { scroll-behavior: auto; } }
