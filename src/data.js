@@ -25,7 +25,7 @@ export const NAV = [
     { label: 'Obat Bebas', to: '/produk/obat-bebas' },
     { label: 'Obat Resep Etikal', to: '/produk/obat-resep-etikal' },
     { label: 'Obat Generik Berlogo', to: '/produk/obat-generik-berlogo' },
-    { label: 'Obat E-Katalog', to: '/produk/e-katalog' },
+    // { label: 'Obat E-Katalog', to: '/produk/e-katalog' },
   ] },
   { label: 'Berita', to: '/berita' },
   { label: 'Karir', to: '/karir/peluang', children: [
@@ -289,7 +289,7 @@ export const EXEC = [
   {
     name: 'Novella Valenia, M.Farm., Apt.',
     role: 'President Commissioner',
-    photo: null,
+    photo: "1 Novella.png",
   },
   {
     name: 'Bramasta Youngky, M.Farm., Apt.',
